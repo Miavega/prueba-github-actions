@@ -35,9 +35,11 @@ jobs:
       with:
         args: >
           -Dsonar.projectVersion=${{ github.run_number }}
-      run: org.sonarsource.scanner.maven:sonar
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+    
+    - name: Analize
+      run: org.sonarsource.scanner.maven:sonar
       
     runs-on: ubuntu-latest
