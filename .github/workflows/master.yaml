@@ -7,8 +7,6 @@ on:
   pull_request:
     types: [opened, synchronize, reopened]
 
-name: CI/CD Workflow
-
 jobs:
 
   buid:
