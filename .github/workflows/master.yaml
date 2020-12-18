@@ -42,7 +42,7 @@ jobs:
 
     - name: SonarCloud Scan
       # uses: sonarsource/sonarcloud-github-action@master
-      run: mvn sonar:sonar -Dsonar.projectVersion=${{ github.run_number }}
+      run: mvn sonar:sonar -Dsonar.projectVersion=${{ github.run_number }} -Dsonar.organization=miavega -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$SONAR_TOKEN
       # with:
       #   args: >
       #     -Dsonar.projectVersion=${{ github.run_number }}
