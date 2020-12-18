@@ -1,13 +1,13 @@
-package com.everis.prueba;
+// package com.everis.prueba;
 
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
+// import org.junit.jupiter.api.Test;
+// import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
-class CrudpruebaApplicationTests {
+// @SpringBootTest
+// class CrudpruebaApplicationTests {
 
-	@Test
-	void contextLoads() {
-	}
+// 	@Test
+// 	void contextLoads() {
+// 	}
 
-}
+// }
