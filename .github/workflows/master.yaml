@@ -37,11 +37,12 @@ jobs:
         # Disabling shallow clone is recommended for improving relevancy of reporting
         fetch-depth: 0
 
-    - name: Analize
-      run: mvn org.sonarsource.scanner.maven:sonar
+    # - name: Analize
+    #   run: mvn org.sonarsource.scanner.maven:sonar
 
     - name: SonarCloud Scan
-      uses: sonarsource/sonarcloud-github-action@master
+      # uses: sonarsource/sonarcloud-github-action@master
+      run: mvn sonar:sonar
       with:
         args: >
           -Dsonar.projectVersion=${{ github.run_number }}
