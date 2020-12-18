@@ -1,4 +1,4 @@
 FROM openjdk:8-jre-alpine
 MAINTAINER everisColombia
-ADD target/*.jar micro.jar
+ADD *.jar micro.jar
 ENTRYPOINT ["java", "-jar", "micro.jar"]
