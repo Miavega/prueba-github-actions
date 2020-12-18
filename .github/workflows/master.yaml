@@ -76,7 +76,8 @@ jobs:
       uses: docker/build-push-action@v2
       with:
         push: true
-        tags: $REGISTRY/$APPNAME:$TAG
+        # tags: $REGISTRY/$APPNAME:$TAG
+        tags: regportalbrilla/Micro-Prueba:latest
         build-args: |
           arg1=value1
           arg2=value2
