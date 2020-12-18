@@ -31,7 +31,7 @@ jobs:
         fetch-depth: 0
 
     - name: Analize
-      run: org.sonarsource.scanner.maven:sonar
+      run: mvn org.sonarsource.scanner.maven:sonar
 
     - name: SonarCloud Scan
       uses: sonarsource/sonarcloud-github-action@master
