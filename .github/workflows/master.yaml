@@ -77,14 +77,14 @@ jobs:
       with:
         push: true
         # tags: $REGISTRY/$APPNAME:$TAG
-        tags: regportalbrilla/micro-prueba:latest
+        tags: regportalbrilla.azurecr.io/micro-prueba:latest
         # build-args: |
         #   arg1=value1
         #   arg2=value2
       env:
         TAG: "1.0"  # Needed to get PR information, if any
         APPNAME: "Micro-Prueba"
-        REGISTRY: "regportalbrilla"
+        REGISTRY: "regportalbrilla.azurecr.io"
 
     - name: Image digest
       run: echo ${{ steps.docker_build.outputs.digest }}
