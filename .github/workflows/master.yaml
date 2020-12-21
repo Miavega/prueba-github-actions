@@ -93,12 +93,12 @@ jobs:
 
   deploy_aks:
     steps:
-      - uses: actions/checkout@master
+    - uses: actions/checkout@master
+  
+    - uses: Azure/docker-login@v1
+      with:
+        login-server: ${{ secrets.REPOSITORY_DOCKER }}
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        password: ${{ secrets.REPOSITORY_DOCKER }}
     
-      - uses: Azure/docker-login@v1
-        with:
-          login-server: ${{ secrets.REPOSITORY_DOCKER }}
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.REPOSITORY_DOCKER }}
-      
-      runs-on: self-hosted
+    runs-on: self-hosted
