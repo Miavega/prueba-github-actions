@@ -100,5 +100,12 @@ jobs:
         login-server: ${{ secrets.REPOSITORY_DOCKER }}
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.REPOSITORY_DOCKER }}
+
+    # Set the target AKS cluster.
+    - uses: Azure/aks-set-context@v1
+      with:
+        creds: '${{ secrets.AZURE_CREDENTIALS }}'
+        cluster-name: AKS-eastus2-001
+        resource-group: RG-DEV-Microservices-eastus2-001
     
     runs-on: self-hosted
