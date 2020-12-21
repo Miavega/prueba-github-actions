@@ -78,9 +78,10 @@ jobs:
         push: true
         # tags: $REGISTRY/$APPNAME:$TAG
         tags: regportalbrilla/micro-prueba:latest
-        build-args: |
-          arg1=value1
-          arg2=value2
+        context: .
+        # build-args: |
+        #   arg1=value1
+        #   arg2=value2
       env:
         TAG: "1.0"  # Needed to get PR information, if any
         APPNAME: "Micro-Prueba"
