@@ -98,8 +98,8 @@ jobs:
     - uses: Azure/docker-login@v1
       with:
         login-server: ${{ secrets.REPOSITORY_DOCKER }}
-        username: "brillaAKSPrincipal"
-        password: "WLEkg.PLzXGfaS0Sxsh1vXa3f7zU~dF_vs"
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        password: ${{ secrets.REPOSITORY_DOCKER }}
 
     # Set the target AKS cluster.
     - uses: Azure/aks-set-context@v1
