@@ -97,7 +97,7 @@ jobs:
   
     - uses: Azure/docker-login@v1
       with:
-        login-server: ${{ secrets.REPOSITORY_DOCKER }}
+        login-server: regportalbrilla.azurecr.io
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.REPOSITORY_DOCKER }}
 
