@@ -111,11 +111,14 @@ jobs:
     - name: "Login"
       run: az login --service-principal -u b20b9030-37ab-4973-99ea-480f1bdd5735 -p WLEkg.PLzXGfaS0Sxsh1vXa3f7zU~dF_vs -t e1fc375a-f999-4b4e-bd62-6a834d161117
 
-    - uses: Azure/k8s-deploy@v1
-      with:
-        manifests: |
-          deploy/deploy.yaml
-        images: |
-          regportalbrilla.azurecr.io/micro-prueba:latest
+    # - uses: Azure/k8s-deploy@v1
+    #   with:
+    #     manifests: |
+    #       deploy/deploy.yaml
+    #     images: |
+    #       regportalbrilla.azurecr.io/micro-prueba:latest
+
+    - name: "Deploy"
+      run: sh "/usr/local/bin/kubectl apply -f deploy/deploy.yml"
     
     runs-on: self-hosted
