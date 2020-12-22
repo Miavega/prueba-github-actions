@@ -95,20 +95,20 @@ jobs:
     steps:
     - uses: actions/checkout@master
   
-    # - uses: Azure/docker-login@v1
+    - uses: Azure/docker-login@v1
+      with:
+        login-server: ${{ secrets.REPOSITORY_DOCKER }}
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        password: ${{ secrets.REPOSITORY_DOCKER }}
+
+    # Set the target AKS cluster.
+    # - uses: Azure/aks-set-context@v1
     #   with:
-    #     login-server: ${{ secrets.REPOSITORY_DOCKER }}
-    #     username: ${{ secrets.DOCKERHUB_USERNAME }}
-    #     password: ${{ secrets.REPOSITORY_DOCKER }}
+    #     creds: '${{ secrets.AZURE_CREDENTIALS }}'
+    #     cluster-name: AKS-eastus2-001
+    #     resource-group: RG-DEV-Microservices-eastus2-001
 
     - name: "Login"
       run: az login --service-principal -u b20b9030-37ab-4973-99ea-480f1bdd5735 -p WLEkg.PLzXGfaS0Sxsh1vXa3f7zU~dF_vs -t e1fc375a-f999-4b4e-bd62-6a834d161117
-
-    # Set the target AKS cluster.
-    - uses: Azure/aks-set-context@v1
-      with:
-        creds: '${{ secrets.AZURE_CREDENTIALS }}'
-        cluster-name: AKS-eastus2-001
-        resource-group: RG-DEV-Microservices-eastus2-001
     
     runs-on: self-hosted
