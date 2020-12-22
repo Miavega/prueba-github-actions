@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: micro-prueba
+  name: micro-prueba
+  namespace: ns-portal-dev
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: micro-prueba
+  template:
+    metadata:
+      labels:
+        app: micro-prueba
+    spec:
+      containers:
+      - env:
+        - name: TZ
+          value: America/Bogota
+        image: regportalbrilla.azurecr.io/micro-prueba:latest
+        name: micro-prueba
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
+          protocol: TCP
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: service-micro-prueba
+  name: service-micro-prueba
+  namespace: ns-portal-dev
+  annotations: 
+    service.beta.kubernetes.io/azure-load-balancer-internal: "true"
+spec:
+  ports:
+  - port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: ns-portal-dev
+  type: LoadBalancer
