@@ -119,7 +119,6 @@ jobs:
     #       regportalbrilla.azurecr.io/micro-prueba:latest
 
     - name: "Deploy"
-      run: pwd
-      # run: sh "kubectl apply -f /home/brillabastionadmin/actions-runner/_work/prueba-github-actions/prueba-github-actions/deploy/deploy.yml"
+      run: kubectl apply -f deploy/deploy.yml
     
     runs-on: self-hosted
