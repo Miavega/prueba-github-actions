@@ -109,7 +109,7 @@ jobs:
     #     resource-group: RG-DEV-Microservices-eastus2-001
 
     - name: "Login"
-      run: az login --service-principal -u b20b9030-37ab-4973-99ea-480f1bdd5735 -p WLEkg.PLzXGfaS0Sxsh1vXa3f7zU~dF_vs -t e1fc375a-f999-4b4e-bd62-6a834d161117
+      run: az login --service-principal -u <usuario> -p <AKS_PRINCIPAL_KEY> -t <RG_ID>
 
     # - uses: Azure/k8s-deploy@v1
     #   with:
